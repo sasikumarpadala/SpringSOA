@@ -1,4 +1,4 @@
-<aura:component controller="LatestAccountController" implements="force:hasRecordID">
+<aura:component controller="LatestAccountController" implements="force:hasRecordID,flexipage:availableForAllPageTypes">
     <aura:attribute name="accounts" type="List" />
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     
