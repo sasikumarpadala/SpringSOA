@@ -20,8 +20,8 @@
     //alert(Id);
     var navEvt = $A.get("e.force:navigateToSObject");
     navEvt.setParams({
-      recordId: Id,
-      slideDevName: "detail",
+      'recordId': Id,
+      'slideDevName': "detail",
     });
     navEvt.fire();
   }
