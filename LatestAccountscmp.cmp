@@ -1,0 +1,27 @@
+<aura:component controller="LatestAccountController" implements="force:hasRecordID">
+    <aura:attribute name="accounts" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+<div class="slds-p-around_small">
+    <div class="slds-grid slds-wrap">
+      <aura:iteration items="{!v.accounts}" var="account">
+        <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+          <lightning:card
+            title="{!account.Name}"
+            footer="{!account.CreatedDate}"
+            iconName="standard:account"
+          >
+            <aura:set attribute="actions">
+                <lightning:button name="{!account.Id}" label="View Details" variant="brand" 
+                                onclick="{!c.doRedirect}"/>
+            </aura:set>
+            <p class="slds-p-horizontal_small">
+              {!account.Name} &nbsp; {!account.Email} <br/> {!account.Phone} &nbsp;
+              &nbsp;
+            </p>
+          </lightning:card>
+        </div>
+      </aura:iteration>
+    </div>
+  </div>
+</aura:component>
